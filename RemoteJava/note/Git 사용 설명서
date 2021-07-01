@@ -30,8 +30,8 @@
   
 # .gitignore
   
-  - .gitignore에 작성해둔 패턴과 일치하는 파일들은 Git의 고나리 대상에서 제외된다.
-  - Eclipse IDE를 사용할 때는 Eclipse 고나련 설정 파일들ㅇ르 등록해두는 것이 좋다.
+  - .gitignore에 작성해둔 패턴과 일치하는 파일들은 Git의 관리 대상에서 제외된다.
+  - Eclipse IDE를 사용할 때는 Eclipse 관련 설정 파일들을 등록해두는 것이 좋다.
   
     .settings/
     *.project
