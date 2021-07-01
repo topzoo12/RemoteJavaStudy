@@ -5,6 +5,10 @@ public class ClassA {
 	}
 	
 	public int methodB() {
-		return 10;
+		return 10 + 123;
+	}
+	
+	public ClassA getInstance() {
+		return this;
 	}
 }
