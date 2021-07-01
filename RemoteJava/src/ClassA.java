@@ -7,4 +7,8 @@ public class ClassA {
 	public int methodB() {
 		return 10;
 	}
+	
+	public ClassA getInstance() {
+		return this;
+	}
 }
