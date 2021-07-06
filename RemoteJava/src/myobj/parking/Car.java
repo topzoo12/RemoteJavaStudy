@@ -27,7 +27,7 @@ public class Car {
 					);
 				break;
 			} catch (DateTimeException e) {
-				
+				// 예외부분 테스트
 			}
 			
 		}
@@ -47,7 +47,7 @@ public class Car {
 	
 	@Override
 	public String toString() {
-		return String.format("[%s/%c/%s]", number, type, park_date);
+		return String.format("[%s / %c / %s]", number, type, park_date);
 	}
 	
 	
