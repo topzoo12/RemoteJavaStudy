@@ -29,7 +29,7 @@ public class D11_DiscountDay_teacher {
 		}
 		
 		return event;
-	}  
+	}     
 	
 	
 	public static void printEventOfYear(int year) {
@@ -57,7 +57,7 @@ public class D11_DiscountDay_teacher {
 }
 
 
-
+// しししししししししししししししししししししし
 
 
 
