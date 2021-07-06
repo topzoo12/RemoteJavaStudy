@@ -1,3 +1,9 @@
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+import quiz.C07_School;
 
 public class E01_JavaIO {
 	
@@ -19,10 +25,30 @@ public class E01_JavaIO {
 	*/
 	
 	
-	
-	
-	
-	
+	public static void main(String[] args) {
+		
+		
+		try {
+			// FileOutputStream : 파일로 내보낼 수 있는 통로
+			FileOutputStream out = new FileOutputStream("a.txt", false);
+			
+			out.write(65);
+			out.write(66);
+			out.write(67);
+			out.write(68);
+			
+			out.write("\nHello world!!\n".getBytes());
+//			out.write("\n안녕하세요 반갑습니다!".getBytes());
+			
+			// 다 쓴 통로는 반드시 닫아줘야 한다.
+			out.close();
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 }
