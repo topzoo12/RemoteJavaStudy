@@ -15,7 +15,7 @@ public class E01_JavaIO {
 		 - 데이터들이 통해 데이터들이 순차적으로 들어오는 통로를 InputStream이라고 부른다.
 		 - 데이터들이 출력되는 곳으로 보내지는 통로를 OutputStream이라고 부른다
 		 - 데이터가 Stream을 통해 이동하기 위해서는 데이터를 byte타입으로 변환시켜야 한다.
-	
+	    
 	*/
 	
 	
