@@ -17,20 +17,10 @@ public class Car {
 //		this.numbers = ran.nextInt(9000) + 1000;
 		this.number = String.format("%04d", ran.nextInt(10000));
 		this.type = types[ran.nextInt(types.length)];
-		
-		while (true) {
-			try {
-				this.park_date = LocalDate.of(
-						genRandomYear(),
-						genRandomMonth(),
-						genRandomDate()
-					);
-				break;
-			} catch (DateTimeException e) {
-				// 예외부분 테스트
-			}
-			
-		}
+		this.park_date = 
+				LocalDate.of(genRandomYear(), genRandomMonth(), 1);
+		this.park_date = 
+				park_date.plusDays(ran.nextInt(park_date.lengthOfMonth()));
 	}
 	
 	private int genRandomYear() {
@@ -44,6 +34,11 @@ public class Car {
 	private int genRandomDate() {
 		return ran.nextInt(31) + 1;
 	}
+	
+	public LocalDate getPark_date() {
+		return park_date;
+	}
+	
 	
 	@Override
 	public String toString() {
