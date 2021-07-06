@@ -57,8 +57,6 @@ public class D11_DiscountDay_teacher {
 }
 
 
-// しししししししししししししししししししししし
-
 
 
 
