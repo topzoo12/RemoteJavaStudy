@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package quiz;
 
 import java.text.SimpleDateFormat;
@@ -194,4 +194,4 @@ public class D11_DiscountDay {
 
 
 
->>>>>>> branch 'main' of https://github.com/topzoo12/RemoteJavaStudy.git
+
