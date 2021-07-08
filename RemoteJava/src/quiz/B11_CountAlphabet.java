@@ -85,7 +85,6 @@ public class B11_CountAlphabet {
 			System.out.printf("대문자 %c는 %d번 등장했습니다.\n", 'A' + i, uppercount[i]);
 			System.out.printf("대문자 %c는 %d번 등장했습니다.\n", 'a' + i, lowercount[i]);
 		}
-				
 		
 
 	}

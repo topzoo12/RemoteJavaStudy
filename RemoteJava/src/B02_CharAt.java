@@ -14,6 +14,10 @@ public class B02_CharAt {
 	
 	public static void main(String[] args) {
 		
+			System.out.println((int)'a');
+			System.out.println((int)'A');
+		
+		
 			String text = "Hello, everyone!!";
 			
 			System.out.println(text.charAt(0));
