@@ -44,6 +44,7 @@ public class Car_park_limit {
 //		System.out.println(limit_Day.DAY_OF_YEAR);
 		
 	}
+	
 	public static void limitCheck( int carNum) {
 		
 		if (check_day == 2 && (carNum == 1) || (carNum == 6)) {

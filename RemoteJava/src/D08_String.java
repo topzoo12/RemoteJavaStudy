@@ -126,6 +126,7 @@ public class D08_String {
 		languages += languages;
 		
 		System.out.println(languages.indexOf("Java"));
+		System.out.println("///");
 		System.out.println(languages.indexOf("Java", 1));
 		
 		
