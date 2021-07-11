@@ -21,7 +21,7 @@ public class HackToolWord1 {
 
 	public static void main(String[] args) {
 		
-		word("files/word_.txt");
+		word("files/word.txt");
 //		check("files/frankenstein_encrypted.txt");
 //		bruteforce("files/frankenstein.txt");
 		bruteforce("files/frankenstein_encrypted.txt");
@@ -106,17 +106,17 @@ public class HackToolWord1 {
 			BufferedReader in = new BufferedReader(fin);
 		) {
 			String line;
-			for (int i = 0; (line = in.readLine()) != null; i++) {
-					lines.add(line);
-			}
-//			for (int i = 0;i < 10 && (line = in.readLine()) != null; i++) {
-//				// 줄이 비어있거나 문자가 5개도 안되는 줄은 안본걸로 치겠다.
-//				if (line.trim().equals("") || line.length() < 5) {
-//					--i;
-//				}else {				
+//			for (int i = 0; (line = in.readLine()) != null; i++) {
 //					lines.add(line);
-//				}
 //			}
+			for (int i = 0;i < 10 && (line = in.readLine()) != null; i++) {
+				// 줄이 비어있거나 문자가 5개도 안되는 줄은 안본걸로 치겠다.
+				if (line.trim().equals("") || line.length() < 5) {
+					--i;
+				}else {				
+					lines.add(line);
+				}
+			}
 			
 			
 		} catch (FileNotFoundException e) {
@@ -144,22 +144,22 @@ public class HackToolWord1 {
 				}
 //				System.out.println();
 				
-//				for (int x = 0; x < words.size(); x++) {
-					for (int x = 0; x < 1; x++) {
+				for (int x = 0; x < words.size(); x++) {
+//					for (int x = 0; x < 1; x++) {
 //					System.out.println(words.size() + "     in     " + words.get(x));
 //					System.out.println(txt_temp);
 					String a = txt_temp.replaceAll(" " , "").toUpperCase();
 					String b = words.get(x).replaceAll(" ", "").toUpperCase();
 //					b = "Project".replaceAll(" ", "").toUpperCase();
 //					b = "electronic".replaceAll(" ", "").toUpperCase();
-					b = "Frankenstein".replaceAll(" ", "").toUpperCase();
+//					b = "Frankenstein".replaceAll(" ", "").toUpperCase();
 //					b = "gutenberg".replaceAll(" ", "").toUpperCase();
 					
 					if (a.indexOf(b) > -1) {
 //					if (txt_temp.replaceAll(" " , "").toUpperCase().indexOf(words.get(x).replaceAll(" ", "").toUpperCase()) > -1) {
 //						System.out.println(words.get(x));
 //						System.out.println(txt_temp.replaceAll(" " , "").toUpperCase().indexOf(words.get(x).replaceAll(" ", "").toUpperCase()));
-						System.out.println(temp + " : " + a);
+//						System.out.println(temp + " : " + a);
 						temp += 1;
 						accuracy[key-1] += 1;
 					}
