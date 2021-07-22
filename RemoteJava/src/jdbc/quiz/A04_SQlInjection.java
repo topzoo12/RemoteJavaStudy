@@ -29,7 +29,7 @@ public class A04_SQlInjection {
 	
 	public static void main(String[] args) {
 
-		String exploit = "; DROP FROM coffee1;";
+		String exploit = "DELETE FROM coffee1";
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("얼마 이상의 커피를 검색하시겠습니까.");
@@ -38,22 +38,23 @@ public class A04_SQlInjection {
 //		max_price += exploit;
 		
 		String sql = "SELECT * FROM coffee1 WHERE price >= " + max_price;
+		String sql_del = "DELETE FROM coffee1 WHERE price >= " + max_price;
 		
 //		System.out.println(sql);
 //		sql = "SELECT * FROM coffee1 WHERE price >= 100; DELETE FROM coffee1;";
 		try (
 			Connection conn = DriverManager.getConnection(url, user, password);
-			PreparedStatement pstmt = conn.prepareStatement(sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql_del);
 		){
 			try (
 				ResultSet rs = pstmt.executeQuery();
 			){
 				pstmt.executeUpdate();
-				while (rs.next()) {
-					System.out.print(rs.getInt("id") + "\t\t");
-					System.out.print(rs.getString("name") + "\t\t");
-					System.out.print(rs.getInt("price") + "\n");
-				}
+//				while (rs.next()) {
+//					System.out.print(rs.getInt("id") + "\t\t");
+//					System.out.print(rs.getString("name") + "\t\t");
+//					System.out.print(rs.getInt("price") + "\n");
+//				}
 				pstmt.close();
 				rs.close();
 			}
