@@ -36,8 +36,9 @@ public class S08_CardLayout extends StudyFrame {
 		
 		icons.add(new ImageIcon(image.getScaledInstance(300, 300, image.SCALE_SMOOTH)));
 		icons.add(new ImageIcon(image.getScaledInstance(350, 350, image.SCALE_SMOOTH)));
-//		icons.add(new ImageIcon(image.getScaledInstance(300, 300, image.SCALE_SMOOTH)));
+		icons.add(new ImageIcon(image.getScaledInstance(400, 400, image.SCALE_SMOOTH)));
 //		icons.add(new ImageIcon(image.getScaledInstance(300, 300, Image.SCALE_SMOOTH)));
+		setLayout(new CardLayout(10, 10));
 		
 //		new ImageIcon("./");
 		

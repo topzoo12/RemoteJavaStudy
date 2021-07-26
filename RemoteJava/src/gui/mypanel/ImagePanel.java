@@ -60,7 +60,7 @@ public class ImagePanel extends JPanel implements ActionListener {
 		
 		add(label, "Center");
 		add(prev, "West");
-		add(prev, "East");
+		add(next, "East");
 		
 	}
 	
