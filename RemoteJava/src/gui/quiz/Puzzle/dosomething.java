@@ -7,11 +7,12 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-public class change implements ActionListener {
+public class dosomething implements ActionListener {
 	
 	ArrayList<JButton> btns;
+	private int a;
 	
-	public change(ArrayList<? extends JButton> btns) {
+	public dosomething(ArrayList<? extends JButton> btns) {
 		this.btns = (ArrayList<JButton>) btns;
 	}
 	
@@ -41,10 +42,17 @@ public class change implements ActionListener {
 		*/
 	}
 	
+	
+	private void change(int a) {
+		btns.get(0).setText("ธÞที");
+	}
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 //		generateColor();
-		suffle();
+//		suffle();
+		change(a);
 	}
 }
 
