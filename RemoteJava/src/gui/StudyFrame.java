@@ -10,7 +10,7 @@ public class StudyFrame extends JFrame {
 	public void setDefaultOptions() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocation(new Point(2020, 100));
-		setSize(new Dimension(500, 500));
+		setSize(new Dimension(820, 700));
 		setVisible(true);
 	}
 }

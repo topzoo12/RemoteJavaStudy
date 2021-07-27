@@ -67,7 +67,6 @@ public class ImagePanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		
 		if (prev == e.getSource()) {
 			System.out.println("이전 버튼이 눌렸습니다.");
 			label.setIcon(icons[--index < 0 ? index += icons.length : index]);

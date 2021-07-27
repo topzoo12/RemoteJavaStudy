@@ -14,6 +14,8 @@ public class S03_JButton extends JFrame {
 	public S03_JButton() {
 		super("How to make JButton?");
 		
+		super.setTitle("dddddddddddddddddddddddddd");
+		
 		setLayout(new BorderLayout());
 		
 		JButton[] btns = new JButton[5];
