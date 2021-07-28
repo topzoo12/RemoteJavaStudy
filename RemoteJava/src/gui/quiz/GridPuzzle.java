@@ -89,7 +89,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(4).setText(btns.get(0).getText());
 					btns.get(0).setText("");
 				}
-				exitCheck();
+				exitCheck(0);
 			}
 		});
 		// ===========================================================================
@@ -111,7 +111,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(5).setText(btns.get(1).getText());
 					btns.get(1).setText("");
 				}
-				exitCheck();
+				exitCheck(1);
 			}
 		});
 		// ===========================================================================
@@ -129,7 +129,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(6).setText(btns.get(2).getText());
 					btns.get(2).setText("");
 				}
-				exitCheck();
+				exitCheck(2);
 			}
 		});
 		// ===========================================================================
@@ -144,7 +144,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(7).setText(btns.get(3).getText());
 					btns.get(3).setText("");
 				}
-				exitCheck();
+				exitCheck(3);
 			}
 		});
 		// ===========================================================================
@@ -162,7 +162,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(8).setText(btns.get(4).getText());
 					btns.get(4).setText("");
 				} 
-				exitCheck();
+				exitCheck(4);
 			}
 		});
 		// ===========================================================================
@@ -183,7 +183,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(9).setText(btns.get(5).getText());
 					btns.get(5).setText("");
 				} 
-				exitCheck();
+				exitCheck(5);
 			}
 		});
 		// ===========================================================================
@@ -204,7 +204,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(10).setText(btns.get(6).getText());
 					btns.get(6).setText("");
 				} 
-				exitCheck();
+				exitCheck(6);
 			}
 		});		
 		// ===========================================================================
@@ -222,7 +222,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(11).setText(btns.get(7).getText());
 					btns.get(7).setText("");
 				} 
-				exitCheck();
+				exitCheck(7);
 			}
 		});		
 		// ===========================================================================
@@ -240,7 +240,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(12).setText(btns.get(8).getText());
 					btns.get(8).setText("");
 				} 
-				exitCheck();
+				exitCheck(8);
 			}
 		});
 		// ===========================================================================
@@ -261,7 +261,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(13).setText(btns.get(9).getText());
 					btns.get(9).setText("");
 				} 
-				exitCheck();
+				exitCheck(9);
 			}
 		});		
 		// ===========================================================================
@@ -282,7 +282,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(14).setText(btns.get(10).getText());
 					btns.get(10).setText("");
 				} 
-				exitCheck();
+				exitCheck(10);
 			}
 		});		
 		// ===========================================================================
@@ -300,7 +300,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(15).setText(btns.get(11).getText());
 					btns.get(11).setText("");
 				} 
-				exitCheck();
+				exitCheck(11);
 			}
 		});		
 		// ===========================================================================
@@ -315,7 +315,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(13).setText(btns.get(12).getText());
 					btns.get(12).setText("");
 				} 
-				exitCheck();
+				exitCheck(12);
 			}
 		});		
 		// ===========================================================================
@@ -333,7 +333,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(14).setText(btns.get(13).getText());
 					btns.get(13).setText("");
 				} 
-				exitCheck();
+				exitCheck(13);
 			}
 		});		
 		// ===========================================================================
@@ -351,7 +351,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(15).setText(btns.get(14).getText());
 					btns.get(14).setText("");
 				} 
-				exitCheck();
+				exitCheck(14);
 			}
 		});		
 		// ===========================================================================
@@ -366,7 +366,7 @@ public class GridPuzzle extends StudyFrame {
 					btns.get(14).setText(btns.get(15).getText());
 					btns.get(15).setText("");
 				} 
-				exitCheck();
+				exitCheck(15);
 			}
 		});		
 				
@@ -397,9 +397,28 @@ public class GridPuzzle extends StudyFrame {
 //		south_button.addActionListener(new gui.quiz.Puzzle.change(btns));
 //		south_button.doClick();	
 	}
+	public void exitCheck(int a){
+		System.out.println("11");
+		if (btns.get(btns.size()-1).getText().equals("")) {
+			System.out.println("22");
+			for (int i = 0; i < btns.size(); i++) {
+				
+				if ((btns.get(i).getText().equals(i+1)) && i != btns.size()) {
+					System.out.println(btns.get(i).getText());
+					result = true;
+				} else {
+					result = false;
+				}
+			}
+			if (result == true) {
+				System.out.println("°ÔÀÓ ³¡!!");
+			}
+		}
+	}
+	
 	public void exitCheck(){
 		if (btns.get(btns.size()-1).getText().equals("")) {
-			for (int i = 0; i < btns.size()-4; i++) {
+			for (int i = 0; i < btns.size(); i++) {
 				
 				if ((btns.get(i).getText().equals(i+1)) && i != btns.size()) {
 					System.out.println(btns.get(i).getText());
