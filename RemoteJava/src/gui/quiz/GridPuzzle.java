@@ -30,7 +30,7 @@ public class GridPuzzle extends StudyFrame {
 //		HashSet<JButton> btns = new HashSet<>();
 		
 		// 2개 이상의 레이아웃을 사용하고 싶다면 JPanel을 이용한다.
-		setLayout(new BorderLayout());
+		setLayout(new BorderLayout()); 
 		
 		// JPanel은 레이아웃을 설정할 수 있는 새로운 판이다.
 		JPanel center_panel = new JPanel();

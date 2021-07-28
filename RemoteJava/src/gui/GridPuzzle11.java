@@ -106,7 +106,7 @@ public class GridPuzzle11 extends JFrame {
 				
 				num_pads.get(i).setIcon(new ImageIcon(ss.get(i).getImage()));
 //				num_pads.get(i).setIcon(ss.get(i));
-				x += w;
+				x += w; 
 				
 //				new_pad.setIcon(new ImageIcon("./image/peng/icon3.jpg"));
 //				numPads.add(new Numpad(i, gameSize, numPads));

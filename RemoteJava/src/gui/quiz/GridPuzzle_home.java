@@ -30,7 +30,7 @@ public class GridPuzzle_home extends JFrame {
 		public GridPuzzle_home() throws IOException {
 			this(3);
 		}
-				
+				 
 		public GridPuzzle_home(int gameSize) throws IOException {
 			super(String.format("숫자퍼즐게임 : %d x %d", gameSize, gameSize));
 			

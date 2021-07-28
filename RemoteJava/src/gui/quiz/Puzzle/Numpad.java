@@ -21,7 +21,7 @@ public class Numpad extends JButton implements ActionListener {
 	int right;
 	int top;
 	int bottom;
-	
+	 
 	public Numpad(int index, int gameSize, List<JButton> numPads, BufferedImage image) {
 		this.gameSize = gameSize;
 		this.numPads = numPads;

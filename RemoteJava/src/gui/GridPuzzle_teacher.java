@@ -88,7 +88,8 @@ public class GridPuzzle_teacher extends JFrame {
 				if (x >= w_max) {
 					y += h;
 					x = 0;
-				}
+				} 
+				
 				dst.getGraphics().drawImage(src, 0, 0, w, h, x, y, (x + w), (y + h), null);
 				
 //				new_pad.setIcon(new ImageIcon(dst));

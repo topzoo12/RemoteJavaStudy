@@ -91,7 +91,7 @@ public class Numpad_home extends JButton implements ActionListener {
 		
 //		image.getSubimage(index, index, bottom, right);
 	}
-	
+	 
 	
 	
 	private boolean isBlank(int index) {
