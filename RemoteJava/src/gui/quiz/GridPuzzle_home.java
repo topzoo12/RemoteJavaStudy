@@ -84,8 +84,8 @@ public class GridPuzzle_home extends JFrame {
 				System.out.println("y : " + y);
 				System.out.println("=============================");
 				
-				x += w;
-			}
+				x += w; 
+			} 
 //			for (int i = 0; i < s1.size(); i++) {
 //				System.out.println("s1 \t- " + i + " : " + s1.get(i));
 //				System.out.println("so1 \t- " + i + " : " + so1.get(i));
