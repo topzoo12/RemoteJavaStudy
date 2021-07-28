@@ -55,12 +55,12 @@ public class GridPuzzle extends StudyFrame {
 			} else {
 				aa.add(ran_n);
 				cc++;
-				System.out.print(ran_n + "\t");
+//				System.out.print(ran_n + "\t");
 			}	
 		}
-		System.out.println("============================");
+//		System.out.println("============================");
 		for (int a = 0; a < aa.size(); a++) {
-			System.out.print(aa.get(a) + "\t");
+//			System.out.print(aa.get(a) + "\t");
 			if (aa.get(a).equals(temp)) {
 				JButton btn = new JButton();
 				btns.add(btn);
@@ -384,12 +384,12 @@ public class GridPuzzle extends StudyFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				for (int i = 0; i < btns.size(); i++) {
-				if(btns.get(i).getText().equals(null)) {
-					
-				} else {
-					System.out.println(btns.get(i).getText());
-				}
-			}		
+					if(btns.get(i).getText().equals(null)) {
+						
+					} else {
+						System.out.println(btns.get(i).getText());
+					}
+				}		
 			}
 		}
 		// ===========================================================================

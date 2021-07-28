@@ -29,7 +29,6 @@ public class S07_GridLayout extends StudyFrame {
 		add(center_panel, "Center");
 		add(south_button, "South");
 		
-		
 		center_panel.setLayout(new GridLayout(3, 5));
 		
 		for (int i = 0; i < 15; i++) {
