@@ -1,6 +1,6 @@
 Project
-electronic
+Electronic
 Frankenstein
-gutenberg
+Gutenberg
 Key
 Apple

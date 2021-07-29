@@ -11,9 +11,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 import gui.StudyFrame;
@@ -71,18 +73,25 @@ public class HangManGui extends StudyFrame {
 		
 		JLabel status = new JLabel(goal_word);
 		
-		JTextArea ta = new JTextArea();
+		JTextArea ta = new JTextArea();		
 		JTextArea ta1 = new JTextArea("'" + image_list.size() + "' 남은 목숨");
 		
-		ta.setBounds(20, 20, 700, 700);
-		ta1.setBounds(60, 60, 700, 700);
+		
+		ta.setBounds(20, 20, 20, 10);
+		ta1.setBounds(60, 60, 100, 100);
+		
+		status.setBackground(new Color(50, 60, 100));
 		
 		
 		ta.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 //				System.out.println(e.getKeyChar() + " Value  Inputed");
-//				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				ta.setText("");
 			}
 			
 			@Override
@@ -90,21 +99,45 @@ public class HangManGui extends StudyFrame {
 //				status.setText(e.getKeyCode() + " Key Pressed");
 				dd = "";
 //				System.out.println(image_list.get(death_count));
+				
 				play(Character.toString(e.getKeyChar()));
 				
-
-				if (death_count > image_list.size()) {
-					label.setIcon(new ImageIcon("image/peng/icon3.jpg"));
+				if (death_count >= image_list.size()) {
+					label.setIcon(new ImageIcon("image/lose.jpg"));
+//					System.out.println(label.getIcon());
+					JOptionPane.showMessageDialog(null,"패배했습니다. ok버튼을 누르면 종료됩니다.");	
+//					try {
+//						TimeUnit.SECONDS.sleep(5);
+//					} catch (InterruptedException e1) {
+//						// TODO Auto-generated catch block
+//						e1.printStackTrace();
+//					}
+					
+					System.exit(EXIT_ON_CLOSE);
 				} else {
-					label.setIcon(new ImageIcon("image/hang/" + death_count + ".png"));
+					label.setIcon(new ImageIcon("image/hang/" + (death_count+1) + ".png"));
 				}
 				
 				
 				
 //				ta1.setText("'" + count_num1++ + "' 번째 기회");
-				ta1.setText("'" + death_count + "' 남은 목숨");
+//				System.out.println("death_count : " + death_count);
+//				System.out.println("quiz_word_result.size() : " + quiz_word_result.size());
+				
+				ta1.setText("'" + (image_list.size() - death_count) + "' 남은 목숨");
 				for (int i = 0; i < quiz_word_result.size(); i++) {
 					dd += (quiz_word_result.get(i) + " ");
+				}
+				
+				if (!(quiz_word_result.contains("_"))) {
+					JOptionPane.showMessageDialog(null,"승리하셨습니다. 5초뒤 종료됩니다.");
+					try {
+						TimeUnit.SECONDS.sleep(5);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					System.exit(EXIT_ON_CLOSE);
 				}
 				
 				if (dd.contains("_") == false) {
@@ -118,12 +151,15 @@ public class HangManGui extends StudyFrame {
 			}
 		});
 		
+		
 		add(ta, "East");
 		add(label, "Center");
 		add(ta1, "South");
 		add(status, "North");
 		
+		
 	}
+	
 	
 	// =======================================================================
 	
@@ -132,26 +168,38 @@ public class HangManGui extends StudyFrame {
 
 
 		String a, b;
+		boolean death_count_check = true;
 
-		alpha.toString().toLowerCase();
-		
+//		alpha.toString().toLowerCase();
 		alpha = alpha.toLowerCase();
 		
 		for (int i = 0; i < quiz_word.size(); i++) {
 			
 			a = quiz_word_result.get(i).toLowerCase();
 			b = quiz_word.get(i).toLowerCase();
-//			System.out.println(death_count);
-			if (a.equals("_") && b.equals(alpha)) {
-				quiz_word_result.set(i, "" + quiz_word.get(i));
-			} else if (!quiz_word_result.get(i).equals("_")) {
-			} else {
-				quiz_word_result.set(i, "_");
-//				System.out.println(death_count);
-			}
 			
+			if (a.equals("_") && b.equals(alpha)) {
+//				System.out.println("123132131321");
+				quiz_word_result.set(i, "" + quiz_word.get(i));
+				death_count_check = true;
+			} else if (!(a.equals(b))) {
+				quiz_word_result.set(i, "_");
+				death_count_check = false;
+			} 
+//			else {
+//				quiz_word_result.set(i, "_");
+//				death_count_check = false;
+////				System.out.println("여기3");
+////				System.out.println(death_count);
+//			}
 		}
-		death_count++;
+//			System.out.println(quiz_word_result.contains(alpha));
+//			System.out.println("quiz_word_result : --" + quiz_word_result.get(0));
+//			System.out.println("dddd : " + quiz_word_result.toString().toLowerCase().contains(alpha));
+			
+		if (!quiz_word_result.toString().toLowerCase().contains(alpha)) {
+			death_count++;
+		}
 	}
 	
 	
@@ -214,6 +262,7 @@ public class HangManGui extends StudyFrame {
 		for (int i = 0; i < quiz_word.size(); i++) {
 			System.out.print("_ ");
 		}
+		
 //		System.out.println();
 //		System.out.println("맞춰야 할 단어의 길이입니다. 알파벳을 입력하여 단어를 완성하세요");
 		
@@ -249,6 +298,10 @@ public class HangManGui extends StudyFrame {
 			
 		}
 		
+//		System.out.println(death_count);
+//		if (death_count <= 0) {
+//			frame.dispose();
+//		}
 		
 	}		
 }
