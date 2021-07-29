@@ -16,7 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import gui.quiz.Puzzle.Numpad;
+import gui.quiz.Puzzle.NumPad;
 
 public class GridPuzzle_teacher extends JFrame {
 	
@@ -58,71 +58,33 @@ public class GridPuzzle_teacher extends JFrame {
 			int h = ImageIO.read(new File("./image/peng/icon2.jpg")).getWidth()/gameSize;
 			
 			int x = 0, y = 0;
-//			int x = 0, y = 0, w = 700/gameSize, h = 700/gameSize;
 
-			BufferedImage dst = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-//			for (int i = 0; i < (gameSize * gameSize); i++) {
-//				if (x >= w_max) {
-//					y += h;
-//					x = 0;
-//				}
-//				dst.getGraphics().drawImage(src, 0, 0, w, h, x, y, x + w, y + h, null);
-//				ImageIO.write(dst, "png", new File("./image/peng/d/image_" + i + ".png" ));
-//				x += w;
-//			}
-					
-			// ===========================================================================
-			// ===========================================================================
 			
-//			for (int y = 0; y < source.getHeight(); y += w) {
-//			    ImageIO.write(source.getSubimage(0, y, w, w), "png", new File("./image/peng/d/image_" + y + ".png"));
-//			}
+			BufferedImage dst = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+			// ===========================================================================
+			// ===========================================================================
+
 			
 			for (int i = 0, len = gameSize * gameSize; i < len; i++) {
 				
 //				Numpad new_pad = new Numpad(i, gameSize, num_pads);
-				Numpad new_pad = new Numpad(i, gameSize, num_pads, resizedBufferedImage());
+				NumPad new_pad = new NumPad(i, gameSize, num_pads, resizedBufferedImage());
 				num_pads.add(new_pad);
 				num_panel.add(new_pad);
 				
-				if (x >= w_max) {
-					y += h;
-					x = 0;
-				} 
-				
-				dst.getGraphics().drawImage(src, 0, 0, w, h, x, y, (x + w), (y + h), null);
-				
-//				new_pad.setIcon(new ImageIcon(dst));
-//				System.out.print(ss.size());
-//				ss.add(i, new ImageIcon(dst));
 				ss.add(new ImageIcon(dst));
-//				System.out.println(ss.size());
-				
-//				new_pad.setIcon(new ImageIcon(shit.get(i)));
-				ImageIO.write(dst, "png", new File("./image/peng/d/image_" + i + ".png" ));
-				
-//				num_pads.get(i).setIcon(new ImageIcon(dst));
 				num_pads.get(i).setIcon(ss.get(i));
-				x += w;
-				
-//				new_pad.setIcon(new ImageIcon("./image/peng/icon3.jpg"));
-//				numPads.add(new Numpad(i, gameSize, numPads));
+
 			}
-			
-//			int idx = 0;
-//			for (int y = 0; y < source.getHeight(); y += 32) {
-//			    ImageIO.write(source.getSubimage(0, y, 32, 32), "png", new File("<sourceDir>/1fby-6t-555d_" + idx++ + ".png"));
-//			};
 			
 			add(num_panel, "Center");
 			add(menu_panel, "East");
 			
 			shuffle();
-//			setLayout(new GridLayout());
 			
 			setIconImage(ImageIO.read(new File("./image/GridNumberPuzzle.jpg")));
 //			setFont(new Font("µ¸¿ò", Font.PLAIN, 20));
-			setBounds(220, 50, 1000, 1000);
+			setBounds(220, 100, 700, 700);
 			setVisible(true);
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
 //			setSize(700,700);

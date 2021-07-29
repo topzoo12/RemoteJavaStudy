@@ -11,7 +11,7 @@ public class StudyFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 //		setLocation(new Point(2020, 100));
 		setLocation(new Point(220, 100));
-		setSize(new Dimension(820, 700));
+		setSize(new Dimension(800, 800));
 		setVisible(true);
 	}
 }
