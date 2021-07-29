@@ -85,14 +85,14 @@ public class GridPuzzle_home extends JFrame {
 					x = 0;
 				}
 //				dst.getGraphics().drawImage(src, 0, 0, w, h, x, y, (x + w), (y + h), null);
-//				dst.getGraphics().drawImage(src, 0, 0, w, h, x, y, (x + w), (y + h), null);
+				dst.getGraphics().drawImage(my_src, 0, 0, w, h, x, y, (x + w), (y + h), null);
 				
 //				s1.add(new ImageIcon(((my_src).getSubimage(x, y, w, h)).getScaledInstance(layout_w/gameSize, layout_h/gameSize, Image.SCALE_SMOOTH)));
 //				s1.add(new ImageIcon(((my_src).getSubimage(x, y, w, h))));
 				s1.add(new ImageIcon((((BufferedImage) my_src).getSubimage(x, y, w, h)).getScaledInstance(w, h, Image.SCALE_SMOOTH)));
 				
 //				dst.getSubimage(x, y, w, h);
-//				s1.add(new ImageIcon((BufferedImage) dst));
+//				s1.add(new ImageIcon((BufferedImage) dst));				
 //				s2.add(dst);
 //				ImageIO.write(dst, "png", new File("./image/peng/d/" + i + ".png" ));
 //				System.out.println("x : " + x);
