@@ -51,8 +51,8 @@ public class S05_JLabel extends StudyFrame {
 //		};
 		
 		Icon[] icons = {
-				new ImageIcon("./image/icon.gif"),
-				new ImageIcon("./image/icon2.jpg"),
+				new ImageIcon("./image/peng/icon.gif"),
+				new ImageIcon("./image/peng/icon2.jpg"),
 				new ImageIcon("./image/flower2.jpg")
 		};
 		
@@ -71,7 +71,7 @@ public class S05_JLabel extends StudyFrame {
 		JLabel label = new JLabel(image_list.get(cnt));
 		
 		btn.setText("Button");
-		label.setText("Label");
+//		label.setText("Label");
 		
 		add(btn, "South");
 		add(label, "Center");
@@ -87,6 +87,7 @@ public class S05_JLabel extends StudyFrame {
 				label.setIcon(icons[++cnt % icons.length]);
 //				int temp = ++cnt % image_list.size();
 //				label.setIcon(image_list.get(temp));
+				System.out.println();
 			}
 		});
 		

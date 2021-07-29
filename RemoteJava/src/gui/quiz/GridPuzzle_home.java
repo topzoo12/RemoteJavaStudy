@@ -26,6 +26,10 @@ public class GridPuzzle_home extends JFrame {
 		private ArrayList<Icon> so1;
 		
 		private String image_path;
+		
+		private int layout_w = 700;
+		private int layout_h = 800;
+		
 	
 		public GridPuzzle_home() throws IOException {
 			this(3);
@@ -55,6 +59,10 @@ public class GridPuzzle_home extends JFrame {
 				
 			so1 = new ArrayList<>();
 			BufferedImage so_image = ImageIO.read(new File(my_image));
+			BufferedImage my_src = ImageIO.read(new File(my_image));
+			
+//			BufferedImage re_so_image = (BufferedImage) so_image.getScaledInstance(w, h, Image.SCALE_SMOOTH);
+//			System.out.println(re_so_image.getWidth());
 			
 			for (int so_y = 0, len_W = w_max, len_H = w_max; so_y < gameSize; so_y++) {
 				for (int so_x = 0; so_x < gameSize; so_x++) {
@@ -66,6 +74,8 @@ public class GridPuzzle_home extends JFrame {
 					System.out.println("=============================");
 				}
 			}
+//			int layout_w = menu_panel.getWidth();
+//			System.out.println(layout_w);
 						
 			num_pads = new ArrayList<>();
 			s1 = new ArrayList<>();
@@ -75,14 +85,19 @@ public class GridPuzzle_home extends JFrame {
 					x = 0;
 				}
 //				dst.getGraphics().drawImage(src, 0, 0, w, h, x, y, (x + w), (y + h), null);
-				dst.getGraphics().drawImage(src, 0, 0, w, h, x, y, (x + w), (y + h), null);
-				dst.getSubimage(x, y, w, h);
-				s1.add(new ImageIcon(dst));
+//				dst.getGraphics().drawImage(src, 0, 0, w, h, x, y, (x + w), (y + h), null);
+				
+//				s1.add(new ImageIcon(((my_src).getSubimage(x, y, w, h)).getScaledInstance(layout_w/gameSize, layout_h/gameSize, Image.SCALE_SMOOTH)));
+//				s1.add(new ImageIcon(((my_src).getSubimage(x, y, w, h))));
+				s1.add(new ImageIcon((((BufferedImage) my_src).getSubimage(x, y, w, h)).getScaledInstance(w, h, Image.SCALE_SMOOTH)));
+				
+//				dst.getSubimage(x, y, w, h);
+//				s1.add(new ImageIcon((BufferedImage) dst));
 //				s2.add(dst);
 //				ImageIO.write(dst, "png", new File("./image/peng/d/" + i + ".png" ));
-				System.out.println("x : " + x);
-				System.out.println("y : " + y);
-				System.out.println("=============================");
+//				System.out.println("x : " + x);
+//				System.out.println("y : " + y);
+//				System.out.println("=============================");
 				
 				x += w; 
 			} 
@@ -112,14 +127,16 @@ public class GridPuzzle_home extends JFrame {
 			
 			
 			
-			shuffle();
+//			shuffle();
 
 //			setIconImage(ImageIO.read(new File("./image/GridNumberPuzzle.jpg")));
 //			setFont(new Font("µ¸¿ò", Font.PLAIN, 20));
-			setBounds(2820, 50, w_max, h_max);
+//			setBounds(2820, 50, w_max, h_max);
+			setBounds(2820, 50, layout_w, layout_h);
 			setVisible(true);
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
 //			setSize(700,700);
+			
 		}
 		
 		private void shuffle() {

@@ -110,7 +110,7 @@ public class GridPuzzle11 extends JFrame {
 				
 //				new_pad.setIcon(new ImageIcon("./image/peng/icon3.jpg"));
 //				numPads.add(new Numpad(i, gameSize, numPads));
-			}
+			} 
 			
 //			int idx = 0;
 //			for (int y = 0; y < source.getHeight(); y += 32) {
