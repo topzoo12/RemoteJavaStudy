@@ -130,9 +130,9 @@ public class HangManGui extends StudyFrame {
 				}
 				
 				if (!(quiz_word_result.contains("_"))) {
-					JOptionPane.showMessageDialog(null,"승리하셨습니다. 5초뒤 종료됩니다.");
+					JOptionPane.showMessageDialog(null,"승리하셨습니다. 3초뒤 종료됩니다.");
 					try {
-						TimeUnit.SECONDS.sleep(5);
+						TimeUnit.SECONDS.sleep(3);
 					} catch (InterruptedException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
