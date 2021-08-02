@@ -23,7 +23,7 @@ public class jframetest extends StudyFrame {
 		add(label1);
 		label1.setSize(100, 100);
 		label1.setBackground(new Color(000000));
-		label1.setText("라벨1은 여기다");
+		label1.setText("라벨1은 여기다"); 
 		for (int i = 0; i < 2; i++) {
 			for (int x = 0; x < a; x++) {
 				button[i][x] = new JButton();

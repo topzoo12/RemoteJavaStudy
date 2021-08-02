@@ -31,7 +31,7 @@ class JListTest extends JFrame implements ListSelectionListener{
   Container c = getContentPane();
   
   c.add(jlst, BorderLayout.WEST);
-  c.add(p, BorderLayout.CENTER);
+  c.add(p, BorderLayout.CENTER); 
   
   jlst.addListSelectionListener(this);
   setTitle("JList Test1");
