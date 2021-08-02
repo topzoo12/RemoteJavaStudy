@@ -30,15 +30,16 @@ public class S06_JTable extends StudyFrame {
 				{"3", "Ki", "IT_PROG", "IT"},
 				{"4", "Zoey", "IT_PROG", "IT"},
 				{"5", "Warren", "IT_PROG", "IT"},
-				{"6", "Smith", "IT_PROG", "IT"},		
+				{"6", "Smith", "IT_PROG", "IT"},
+				{"6", "Smith", "IT_PROG", "IT"},
+				{"6", "Smith", "IT_PROG", "IT"},
+				{"6", "Smith", "IT_PROG", "IT"}
 		};
 		
 		JTable table = new JTable(data, columnNames);
 		JScrollPane scrollPane = new JScrollPane(table);
 		
-		table.getTableHeader().setPreferredSize(new Dimension(
-				scrollPane.getWidth(), 50
-		));
+		table.getTableHeader().setPreferredSize(new Dimension(scrollPane.getWidth(), 500));
 		table.getTableHeader().setFont(new Font("Small Fonts", Font.BOLD, 22));
 		
 		table.setCellSelectionEnabled(rootPaneCheckingEnabled);
@@ -102,6 +103,11 @@ public class S06_JTable extends StudyFrame {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				
+//				System.out.println(e.equals(selection));
+				
+//				System.out.println(table.getValueAt(table.getSelectedRow(), table.getSelectedColumn()));
+				
+				
 				if (e.getValueIsAdjusting()) { 
 				
 //				System.out.println("테이블 값이 수정되었습니다!!");
@@ -116,6 +122,7 @@ public class S06_JTable extends StudyFrame {
 				}
 			}
 		});
+		
 		
 		
 	}	
