@@ -23,14 +23,14 @@ public class jtable extends StudyFrame {
 		String[] columnNames = {"ID", "NAME", "JOB", "DEPT"};
 		String[][] data = {
 				{"1", "Smith", "IT_PROG", "IT"},
-				{"2", "Allen", "IT_PROG", "IT"},
+				{"2", "Allen", "IT_PROG", "IT"},           
 				{"3", "Ki", "IT_PROG", "IT"},
 				{"4", "Zoey", "IT_PROG", "IT"},
 				{"5", "Warren", "IT_PROG", "IT"},
 				{"6", "Smith", "IT_PROG", "IT"},
 				{"6", "Smith", "IT_PROG", "IT"},
 				{"6", "Smith", "IT_PROG", "IT"},
-				{"6", "Smith", "IT_PROG", "IT"}
+//				{"6", "Smith", "IT_PROG", "IT"}
 		};
 		
 		JTable table = new JTable(data, columnNames);

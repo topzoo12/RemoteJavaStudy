@@ -25,7 +25,8 @@ class JListTest extends JFrame implements ListSelectionListener{
   p.setLayout(new GridLayout(3,2,5,5));
 
   for(int i = 0; i<6; i++){
-   p.add(jlicon[i] = new JLabel());
+     p.add(jlicon[i] = new JLabel());
+     System.out.println(p.getSize());
   }
 
   Container c = getContentPane();
