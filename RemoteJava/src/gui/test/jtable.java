@@ -16,9 +16,9 @@ public class jtable extends StudyFrame {
 	
 	public jtable() {
 		
-		
-		
 		Container con = getContentPane();
+		
+		con.setBackground(Color.green);
 		
 		String[] columnNames = {"ID", "NAME", "JOB", "DEPT"};
 		String[][] data = {
@@ -36,12 +36,15 @@ public class jtable extends StudyFrame {
 		JTable table = new JTable(data, columnNames);
 		JScrollPane scrollPane = new JScrollPane(table);
 		
+		table.setBackground(Color.orange);
+		scrollPane.setBackground(Color.pink);
+		
 		table.getTableHeader().setPreferredSize(new Dimension(scrollPane.getWidth(), 50));
 		
 		add(scrollPane, "Center");
 		add(new JLabel("Employees"), "North");
 		
-		//wfefwefwefwe
+		
 	}
 	
 	
