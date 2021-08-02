@@ -34,7 +34,7 @@ public class jframetest extends StudyFrame {
 				add(button[i][x]);
 				button[i][x].setText("<html>'" + i + "' ÁÙ '<br>" + x + "'¹øÂ°<html>");
 			}
-		}
+		}//ddddddddddddddddddddddddddddddddddd
 		
 		
 		setLocation(820, 100);

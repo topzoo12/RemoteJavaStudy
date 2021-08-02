@@ -41,7 +41,7 @@ public class jtable extends StudyFrame {
 		add(scrollPane, "Center");
 		add(new JLabel("Employees"), "North");
 		
-		
+		//wfefwefwefwe
 	}
 	
 	
