@@ -40,36 +40,22 @@ public class A01_JdbcConnection {
 		
 		// 2. DriverManager 클래스를 통해 DB에 연결한다.
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XEPDB1", "hr", "1234");
+//			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XEPDB1", "hr", "1234");
+			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@database-1.cxc98ia1oha4.us-east-2.rds.amazonaws.com:1521/ORCL", "cafe", "!!22Qorthdud");
+
+			String sql = "select * from coffee";
 			
-			/*
-				3. 생성된 연결을 객체에 전송하고자 하는 쿼리문을 실어놓는다
-			  	  ※ 쿼리문에 ;을 넣으면 실행되지 않는다.
-			
-		 	*/
-			String sql = "SELECT employee_id, last_name, salary, department_name "
-					+ "FROM employees INNER JOIN departments USING(department_id)"
-					+ " ORDER BY employee_id ASC";
-			
-			//PreparedStatement pstmt = conn.prepareStatement("select * from employees");
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			
-			/* 
-				4. 준비해놓은 쿼리문을 실행한다.
-				   SELECT문은 executeQuery() 메서드를 사용해야 하고 
-				   INSERT, UPDATE, DELETE는 executeUpdate() 메서드를 사용해야 한다.
-			
-			*/
 			
 			ResultSet rs = pstmt.executeQuery();
 			
-			// 5. 받아온 쿼리 결과를 사용한다.
+			System.out.println("ID\tNAME\t\tPRICE");
+			System.out.println("=====================");
 			while (rs.next()) {
-				System.out.printf("%-10d\t %-10s \t %-8d %s\n", 
-						rs.getInt("employee_id"), 
-						rs.getString("last_name"), 
-						rs.getInt("salary"),
-						rs.getString("department_name"));
+				System.out.print(rs.getInt("ID") + "\t");
+				System.out.print(rs.getString("NAME") + "\t\t");
+				System.out.print(rs.getInt("PRICE"));
+				System.out.println();
 			}
 			
 			// 6. 다 사용한 연결을 나중에 연 순서대로 닫아준다
@@ -81,7 +67,7 @@ public class A01_JdbcConnection {
 			System.out.println("getConnection 하다가 문제 생김");
 		}
 		
-		System.out.println("main 끝");
+//		System.out.println("main 끝");
 		
 		
 	}
