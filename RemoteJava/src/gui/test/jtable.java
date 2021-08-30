@@ -21,6 +21,7 @@ public class jtable extends StudyFrame {
 		con.setBackground(Color.green);
 		
 		String[] columnNames = {"ID", "NAME", "JOB", "DEPT"};
+		
 		String[][] data = {
 				{"1", "Smith", "IT_PROG", "IT"},
 				{"2", "Allen", "IT_PROG", "IT"},           

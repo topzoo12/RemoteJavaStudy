@@ -39,7 +39,7 @@ public class S06_JTable extends StudyFrame {
 		JTable table = new JTable(data, columnNames);
 		JScrollPane scrollPane = new JScrollPane(table);
 		
-		table.getTableHeader().setPreferredSize(new Dimension(scrollPane.getWidth(), 500));
+		table.getTableHeader().setPreferredSize(new Dimension(scrollPane.getWidth(), 50));
 		table.getTableHeader().setFont(new Font("Small Fonts", Font.BOLD, 22));
 		
 		table.setCellSelectionEnabled(rootPaneCheckingEnabled);
@@ -96,7 +96,9 @@ public class S06_JTable extends StudyFrame {
 		ListSelectionModel selection = table.getSelectionModel();
 		
 		selection.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		table.setRowSelectionAllowed(false);
+//		table.setRowSelectionAllowed(false);
+		table.setColumnSelectionAllowed(false);
+
 		
 		selection.addListSelectionListener(new ListSelectionListener() {
 			

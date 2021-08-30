@@ -48,20 +48,20 @@ public class jframetest extends StudyFrame {
 		*/
 		
 		
-		JLabel label1 = new JLabel();
+//		JLabel label1 = new JLabel();
 		
 		int a = 10;
 		
 		JButton[][] button = new JButton[a][a];
 		
 		
-		add(label1);
-		label1.setSize(100, 100);
-//		label1.setLocation(100, 50);
-		label1.setBackground(Color.pink);
-		label1.setText("라벨1은 여기다"); 
+//		add(label1);
+//		label1.setSize(100, 100);
+////		label1.setLocation(100, 50);
+//		label1.setBackground(Color.pink);
+//		label1.setText("라벨1은 여기다"); 
 		
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 5; i++) {
 			for (int x = 0; x < a; x++) {
 				button[i][x] = new JButton();
 				button[i][x].setSize(100, 100);
